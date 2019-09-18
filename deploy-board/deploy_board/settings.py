@@ -163,7 +163,7 @@ if TELETRAAN_SERVICE_FIXED_OAUTH_TOKEN:
     oauth_middleware = 'deploy_board.webapp.security.FixedOAuthMiddleware'
 
 MIDDLEWARE_CLASSES = (
-    'csp.middleware.CSPMiddleware',
+    # 'csp.middleware.CSPMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
