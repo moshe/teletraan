@@ -109,6 +109,7 @@ def get_host_details(host_id):
      'Tags': instance['tags'],
      'Launch Time': launch_time,
      'AMI Id': ami_id,
+     'Phobos Link': '',
     }
     if IS_PINTEREST and PHOBOS_URL:
         host_ip = instance['config']['internal_address']
