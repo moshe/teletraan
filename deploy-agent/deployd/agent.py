@@ -155,7 +155,7 @@ class DeployAgent(object):
                 # randomly sleep some time before pinging server
                 sleep_secs = randrange(self._config.get_init_sleep_time())
                 log.info("Randomly sleep {} seconds before starting.".format(sleep_secs))
-                # time.sleep(sleep_secs)
+                time.sleep(sleep_secs)
             else:
                 log.info("No status file. Could be first time agent ran")
             self.serve_build()
@@ -404,7 +404,7 @@ def main():
         pinlogger.LOG_TO_STDERR = True
     else:
         log_filename = os.path.join(config.get_log_directory(), 'deploy-agent.log')
-        logging.basicConfig(level=config.get_log_level(),
+        logging.basicConfig(filename=log_filename, level=config.get_log_level(),
                             format='%(asctime)s %(name)s:%(lineno)d %(levelname)s %(message)s')
 
     log.info("Start to run deploy-agent.")
